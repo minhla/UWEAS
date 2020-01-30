@@ -1,0 +1,11 @@
+.grid-pane {
+    -fx-border-color: #8e8e8e;
+    -fx-padding: 5px;
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+}
+
+.tab-pane {
+    -fx-padding: 5px;
+    -fx-border-color: #8e8e8e;
+}

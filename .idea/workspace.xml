@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coursework/uwe/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coursework/uwe/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coursework/uwe/Manager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coursework/uwe/Manager.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coursework/uwe/Warden.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coursework/uwe/Warden.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/Manager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/Manager.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/Warden.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/uwe/Warden.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/halls.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uwe/students.csv" beforeDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -218,8 +204,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/uwe/ManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="412">
+              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -333,7 +319,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580997890388" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580998055683" />
     <property name="dynamic.classpath" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Project" />
@@ -445,12 +431,12 @@
       <workItem from="1579451225069" duration="15683000" />
       <workItem from="1579863550165" duration="439000" />
       <workItem from="1579864398979" duration="14095000" />
-      <workItem from="1580961845422" duration="15129000" />
+      <workItem from="1580961845422" duration="15419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46648000" />
+    <option name="totallyTimeSpent" value="46938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -693,8 +679,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uwe/ManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="412">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

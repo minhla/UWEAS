@@ -1,10 +1,10 @@
 package uwe;
 
 public class Student {
-    private String ID;
+    private int ID;
     private String name;
 
-    public Student(String ID, String name) {
+    public Student(int ID, String name) {
         this.ID = ID;
         this.name = name;
     }
@@ -17,11 +17,11 @@ public class Student {
                 '}';
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 

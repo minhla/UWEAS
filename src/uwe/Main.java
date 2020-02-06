@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.util.HashMap;
-
 public class Main extends Application {
 
     @Override
@@ -19,13 +17,11 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("uwe_icon.png"));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
 
     public static void main(String[] args) {
         launch(args);
-
-        //Reads the data from the csv files
-        HashMap<Integer, String> rooms =new HashMap<>();
     }
 }

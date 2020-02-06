@@ -22,6 +22,25 @@
    <top>
       <TabPane maxHeight="290.0" maxWidth="790.0" minHeight="290.0" minWidth="790.0" prefHeight="290.0" prefWidth="790.0" style="-fx-border-color: #8e8e8e;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
+            <Tab closable="false" text="All">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableView" editable="true" fixedCellSize="0.0" maxHeight="260.0" maxWidth="790.0" minHeight="260.0" minWidth="790.0" prefHeight="260.0" prefWidth="790.0">
+                           <columns>
+                              <TableColumn fx:id="LeaseNumber" prefWidth="85.60003662109375" text="Lease No." />
+                              <TableColumn fx:id="HallName" editable="false" prefWidth="75.199951171875" text="Hall" />
+                              <TableColumn fx:id="RoomNumber" prefWidth="81.60003662109375" text="Room No." />
+                              <TableColumn fx:id="StudentName" prefWidth="182.39996337890625" text="Student Name" />
+                              <TableColumn fx:id="OccStatus" prefWidth="88.0" text="Occupancy Status" />
+                              <TableColumn fx:id="CleaningStatus" prefWidth="113.59991455078125" text="Cleaning Status" />
+                              <TableColumn fx:id="Availability" prefWidth="154.40008544921875" text="Availability" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
           <Tab closable="false" text="Leases">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -29,6 +48,8 @@
                         <TableView editable="true" fixedCellSize="0.0" maxHeight="260.0" maxWidth="790.0" minHeight="260.0" minWidth="790.0" prefHeight="260.0" prefWidth="790.0">
                            <columns>
                               <TableColumn prefWidth="85.60003662109375" text="Lease No." />
+                              <TableColumn prefWidth="85.60003662109375" text="Duration" />
+                              <TableColumn prefWidth="85.60003662109375" text="Student" />
                            </columns>
                         </TableView>
                      </children>
@@ -59,25 +80,6 @@
                               <TableColumn prefWidth="135.19996643066406" text="Hall Name" />
                               <TableColumn prefWidth="129.60003662109375" text="Address" />
                               <TableColumn prefWidth="154.40008544921875" text="Telephone No." />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-            <Tab closable="false" text="All">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView editable="true" fixedCellSize="0.0" maxHeight="260.0" maxWidth="790.0" minHeight="260.0" minWidth="790.0" prefHeight="260.0" prefWidth="790.0">
-                           <columns>
-                              <TableColumn prefWidth="85.60003662109375" text="Lease No." />
-                              <TableColumn editable="false" prefWidth="75.199951171875" text="Hall" />
-                              <TableColumn prefWidth="81.60003662109375" text="Room No." />
-                              <TableColumn prefWidth="182.39996337890625" text="Student Name" />
-                              <TableColumn prefWidth="88.0" text="Occupancy Status" />
-                              <TableColumn prefWidth="113.59991455078125" text="Cleaning Status" />
-                              <TableColumn prefWidth="154.40008544921875" text="Availability" />
                            </columns>
                         </TableView>
                      </children>

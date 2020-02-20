@@ -14,6 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.util.concurrent.ThreadLocalRandom;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 /**
@@ -46,6 +48,7 @@ public class UWEAS extends Application {
         halls.add(hall);
     }
     
+    
     public void populateData(){
         
         //Generate halls
@@ -61,7 +64,7 @@ public class UWEAS extends Application {
                 "Frenchay",
                 "UWE Bristol, Coldharbour Lane, Frenchay, Bristol",
                 "0117 7496 0085");
-        int[] cleaningStatusInt = new int[]{1,2,3};
+        int[] cleaningStatusInt = new int[]{1,2,3}; //1 for Clean, 2 for Dirty and 3 for Offline
         int[] monthlyRateInt = new int[]{300,400,600,800};
         for (int i = 0; i < 100; i++){
             int rnd = new Random().nextInt(cleaningStatusInt.length);
@@ -115,14 +118,15 @@ public class UWEAS extends Application {
         int rndftName = new Random().nextInt(firstName.length);
         int rndltName = new Random().nextInt(lastName.length);
 
-        String studentName =  firstName[rndftName].toString() + lastName[rndltName].toString();
+        String studentName =  firstName[rndftName] + lastName[rndltName];
         int studentID = ThreadLocalRandom.current().nextInt(19000000, 19090998 + 1);//Randomly generate student ID
 
         Student student = new Student(studentID,studentName);
         Lease lease = new Lease(student,100,360);
         int rnd = new Random().nextInt(frenchay.getNumberofRooms());//Get a random room to assign the Lease
         Room roomHasLease = rooms.get(rnd);
-        roomHasLease.setLease(lease);
+        if (roomHasLease.getCleaningStatus()!=3){ //If the room is not Offline, assign the lease
+        roomHasLease.setLease(lease);}
         }
         
         rooms = blenheim.getRooms();
@@ -133,7 +137,7 @@ public class UWEAS extends Application {
         int rndftName = new Random().nextInt(firstName.length);
         int rndltName = new Random().nextInt(lastName.length);
 
-        String studentName =  firstName[rndftName].toString() + lastName[rndltName].toString();
+        String studentName =  firstName[rndftName] + lastName[rndltName];
         int studentID = ThreadLocalRandom.current().nextInt(19000000, 19090998 + 1);//Randomly generate student ID
 
         Student student = new Student(studentID,studentName);
@@ -173,6 +177,72 @@ public class UWEAS extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setResizable(false);
+        
+        
+        //Populate the table
+        
+        final ObservableList<Table> data = FXCollections.observableArrayList();
+        UWEAS UWEAS = getInstance();
+        UWEAS.populateData();
+        
+        ArrayList<Hall> halls = UWEAS.getHalls();
+        for (int i=0 ; i < halls.size() ; i++){
+            Hall currentHall = halls.get(i);
+            ArrayList<Room> rooms = currentHall.getRooms();
+            
+            for (int j = 0 ; j < rooms.size() ;  j++){
+                Room room = rooms.get(j);
+                
+                Student student = null;
+                String leaseNumber = "";
+                boolean OccStatus = false;
+                String OccStatusString = "";
+               
+                
+                if (room.isOccupied()){
+                    Lease lease = room.getLease();
+                    student = lease.getStudent();
+                    leaseNumber = String.valueOf(lease.getLeaseNo());
+                    OccStatus = true;
+                }
+                
+                if (OccStatus = true){
+                    OccStatusString = "Occupied";
+                }
+                else {
+                    OccStatusString = "Vacant";
+                }
+                
+                String studentName = "";              
+                
+                if (student != null){
+                    studentName = student.getStudentName();
+                }
+                
+                String cleaningStatus = "";
+                switch(room.getCleaningStatus()){
+                    case 1:
+                        cleaningStatus = "Clean";
+                    case 2:
+                        cleaningStatus = "Dirty";
+                    case 3:
+                        cleaningStatus = "Offline";
+                        
+                }
+                
+                Table row = new Table(leaseNumber,
+                                      String.valueOf(currentHall.getHallName()),
+                                      String.valueOf(room.getRoomNumber()),
+                                      studentName,
+                                      OccStatusString,
+                                      String.valueOf(cleaningStatus)
+                );
+                
+                data.add(row);
+             
+            }
+        }
+        
     }
 
 

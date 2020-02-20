@@ -41,26 +41,38 @@ public class ManagerController implements Initializable {
             window.centerOnScreen();
     }
     
-    @FXML private TableView<General> tableView;
-    @FXML private TableColumn<General, Integer> leaseNumberCol;
-    @FXML private TableColumn<General, String> hallNameCol;
-    @FXML private TableColumn<General, Integer> roomNumberCol;
-    @FXML private TableColumn<General, String> studentNameCol;
-    @FXML private TableColumn<General, String> occupancyStatusCol;
-    @FXML private TableColumn<General, String> cleaningStatusCol;
+    @FXML private TableView<Table> tableView;
+    @FXML private TableColumn<Table, String> leaseNumberCol;
+    @FXML private TableColumn<Table, String> hallNameCol;
+    @FXML private TableColumn<Table, String> roomNumberCol;
+    @FXML private TableColumn<Table, String> studentNameCol;
+    @FXML private TableColumn<Table, String> occupancyStatusCol;
+    @FXML private TableColumn<Table, String> cleaningStatusCol;
+    
+    
  
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Sets up the columns in the table
+        leaseNumberCol.setCellValueFactory(new PropertyValueFactory<Table, String>("leaseNumber"));
+        hallNameCol.setCellValueFactory(new PropertyValueFactory<Table, String>("hallName"));
+        roomNumberCol.setCellValueFactory(new PropertyValueFactory<Table, String>("roomNumber"));
+        studentNameCol.setCellValueFactory(new PropertyValueFactory<Table, String>("studentName"));
+        occupancyStatusCol.setCellValueFactory(new PropertyValueFactory<Table, String>("occupancyStatus"));
+        cleaningStatusCol.setCellValueFactory(new PropertyValueFactory<Table, String>("cleaningStatus"));
         
+        tableView.setItems(getEntries());
     }    
     
-    public ObservableList<General> getEntries(){
-        ObservableList<General> general = FXCollections.observableArrayList();
-        
+    public ObservableList<Table> getEntries(){
+        ObservableList<Table> general = FXCollections.observableArrayList();
+        general.add(new Table("1021","Glenside","103","Joe Bloggs","Occupied","Clean"));
+        general.add(new Table("1231","Frenchay","213","Modern Dolch","Occupied","Clean"));
+        general.add(new Table("1021","Blenheim","315","Anthony Baker","Occupied","Dirty"));
+        general.add(new Table("1021","Glenside","201","Candy Crush","Occupied","Dirty"));
         return general;
     }
     

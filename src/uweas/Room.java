@@ -16,11 +16,18 @@ public class Room {
     private int monthlyRate;
     private boolean isOccupied;
 
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
     public Room(int roomNumber, int cleaningStatus, int monthlyRate, boolean isOccupied) {
         this.roomNumber = roomNumber;
         this.cleaningStatus = cleaningStatus;
         this.monthlyRate = monthlyRate;
-        this.isOccupied = isOccupied;
         this.lease = null; //The room has no lease initially
     }
 
@@ -48,8 +55,11 @@ public class Room {
         this.monthlyRate = monthlyRate;
     }
 
-    public boolean isIsOccupied() {
-        return isOccupied;
+    public boolean isOccupied()
+    {
+        // Return whether occupied based on lease
+        // Return boolean based on whether occupied or not
+        return !(getLease() == null);
     }
 
     public void setIsOccupied(boolean isOccupied) {

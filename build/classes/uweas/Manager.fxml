@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uweas.ManagerController">
+<BorderPane maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uweas.ManagerController">
    <top>
       <TabPane maxHeight="290.0" maxWidth="790.0" minHeight="290.0" minWidth="790.0" prefHeight="290.0" prefWidth="790.0" style="-fx-border-color: #8e8e8e;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -31,9 +31,9 @@
                               <TableColumn fx:id="leaseNumberCol" prefWidth="103.99999690055847" text="Lease Number" />
                               <TableColumn fx:id="hallNameCol" editable="false" prefWidth="82.39993286132812" text="Hall" />
                               <TableColumn fx:id="roomNumberCol" prefWidth="79.20002746582031" text="Room No." />
-                              <TableColumn fx:id="studentNameCol" prefWidth="227.20001220703125" text="Student Name" />
-                              <TableColumn fx:id="occupancyStatusCol" prefWidth="136.79998779296875" text="Occupancy Status" />
-                              <TableColumn fx:id="cleaningStatusCol" prefWidth="155.20001220703125" text="Cleaning Status" />
+                              <TableColumn fx:id="studentNameCol" prefWidth="184.0" text="Student Name" />
+                              <TableColumn fx:id="occupancyStatusCol" prefWidth="146.4000244140625" text="Occupancy Status" />
+                              <TableColumn fx:id="cleaningStatusCol" prefWidth="188.80010986328125" text="Cleaning Status" />
                            </columns>
                         </TableView>
                      </children>
@@ -129,7 +129,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="93.0" prefHeight="30.0" prefWidth="46.0" text="Address" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <Label alignment="CENTER" layoutX="10.0" layoutY="93.0" prefHeight="27.0" prefWidth="59.0" text="Hall Addr." GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -137,7 +137,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="20.0" layoutY="160.0" text="Room No." GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label alignment="CENTER" layoutX="20.0" layoutY="160.0" text="Room No." GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -145,40 +145,46 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField prefHeight="26.0" prefWidth="147.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="hallNameField" prefHeight="26.0" prefWidth="147.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="hallIDField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="hallAddressField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="hallPhoneNumberField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Button mnemonicParsing="false" text="Apply Changes" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Placeholder" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" text="Add new lease" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Placeholder" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" text="Delete lease" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lease Number" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <TextField fx:id="leaseNumberField" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Text layoutX="29.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <TextField layoutX="97.0" layoutY="63.0" prefHeight="26.0" prefWidth="118.0" text=" " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="studentIDField" layoutX="97.0" layoutY="63.0" prefHeight="26.0" prefWidth="118.0" text=" " GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-            <TextField prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="studentNameField" prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#Logout" text="Logout" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Rent" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lease Duration" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-            <TextField prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <TextField prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <CheckBox mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <TextField fx:id="monthlyRentField" prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="leaseDurationField" prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <CheckBox fx:id="isOccupiedBox" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cleaning Status" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Occupancy" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <ComboBox prefWidth="150.0" visibleRowCount="3" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cleaningStatusBox" prefWidth="150.0" visibleRowCount="3" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="roomNumberField" prefHeight="26.0" prefWidth="118.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="52.0" text="Hall Tel." GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
          </children>
          <opaqueInsets>
             <Insets />

@@ -10,11 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="280.0" maxWidth="580.0" minHeight="280.0" minWidth="580.0" prefHeight="280.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uweas.LoginController">
+<AnchorPane maxHeight="280.0" maxWidth="580.0" minHeight="280.0" minWidth="580.0" prefHeight="280.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uweas.LoginController">
    <children>
       <Button layoutX="423.0" layoutY="195.0" mnemonicParsing="false" onAction="#Login" text="Login" />
-      <TextField fx:id="username" layoutX="374.0" layoutY="101.0" promptText="Username" />
-      <PasswordField fx:id="password" layoutX="374.0" layoutY="137.0" promptText="Password" />
+      <TextField fx:id="username" layoutX="374.0" layoutY="101.0" onAction="#Login" promptText="Username" />
+      <PasswordField fx:id="password" layoutX="374.0" layoutY="137.0" onAction="#Login" promptText="Password" />
       <Text fontSmoothingType="LCD" layoutX="47.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UWE Accommodation System">
          <font>
             <Font name="System Bold" size="18.0" />

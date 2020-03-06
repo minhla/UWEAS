@@ -88,66 +88,108 @@ public class UWEAS extends Application {
                 "UWE Bristol, Coldharbour Lane, Frenchay, Bristol",
                 "0732 7496 0085");
         
-        
+        addHall(frenchay);
+        addHall(blenheim);
+        addHall(glenside);
+
         
         for (int i = 0; i < 10; i++){
             
             Room tempRoom = new Room(i+1,
                     1,
-                    600,
+                    800,
                     false          
             );
             blenheim.addRoom(tempRoom);
-            glenside.addRoom(tempRoom);
-            frenchay.addRoom(tempRoom);
+            Room tempRoom2 = new Room(i+1,
+                    1,
+                    700,
+                    false          
+            );
+            glenside.addRoom(tempRoom2);
+            Room tempRoom3 = new Room(i+1,
+                    1,
+                    500,
+                    false          
+            );
+            frenchay.addRoom(tempRoom3);
             
         } 
-        addHall(frenchay);
-        addHall(blenheim);
-        addHall(glenside);
+       
         
-        //Initialize random 10 rooms with a lease
+        //Initialize random 3 rooms each hall with a lease
     
-        ArrayList<Room> rooms = frenchay.getRooms();
-        
-        for (int j = 0; j < 3; j++){
-        
-        Student student = new Student(19035184,"Sean Lew");
-        Lease lease = new Lease(student,103,360);
+        ArrayList<Room> roomsFren = frenchay.getRooms();
+        ArrayList<Room> roomsBlen = blenheim.getRooms();
+        ArrayList<Room> roomsGlen = glenside.getRooms();
 
-        Room roomHasLease = rooms.get(j);
-        if (roomHasLease.getCleaningStatus()!=3 && !roomHasLease.isOccupied()){ //If the room is not Offline, assign the lease
-        roomHasLease.setLease(lease);}
         
-        } 
+        Student student1 = new Student(19035184,"Sean Lew");
+        Lease lease1 = new Lease(student1,103,240);
+        Room roomHasLease1 = roomsFren.get(4);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
         
+        student1 = new Student(19035188,"Joe Bloggs");
+        lease1 = new Lease(student1,101,360);
+        roomHasLease1 = roomsFren.get(5);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        roomHasLease1.setCleaningStatus(2);
         
-        rooms = blenheim.getRooms();
+        student1 = new Student(19034188,"Anthony Stark");
+        lease1 = new Lease(student1,102,360);
+        roomHasLease1 = roomsFren.get(1);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
         
-        for (int j = 0; j < 3; j++){
+        student1 = new Student(18045192,"Alice Wonder");
+        lease1 = new Lease(student1,203,360);
+        roomHasLease1 = roomsBlen.get(1);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        roomHasLease1.setCleaningStatus(2);
         
-        Student student = new Student(19035184,"Sean Lew");
-        Lease lease = new Lease(student,103,360);
+        student1 = new Student(16055192,"Frank Sinatraa");
+        lease1 = new Lease(student1,201,480);
+        roomHasLease1 = roomsBlen.get(9);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        
+        student1 = new Student(17089322,"John Doe");
+        lease1 = new Lease(student1,205,120);
+        roomHasLease1 = roomsBlen.get(5);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        roomHasLease1.setCleaningStatus(2);
+        
+        student1 = new Student(18089422,"Simon Sez");
+        lease1 = new Lease(student1,309,120);
+        roomHasLease1 = roomsGlen.get(4);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        roomHasLease1.setCleaningStatus(2);
+        
+        student1 = new Student(17129422,"Tuan Nguyen");
+        lease1 = new Lease(student1,301,120);
+        roomHasLease1 = roomsGlen.get(8);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        
+        student1 = new Student(19089312,"Raul Gin");
+        lease1 = new Lease(student1,309,120);
+        roomHasLease1 = roomsGlen.get(9);
+        if (roomHasLease1.getCleaningStatus()!=3 && !roomHasLease1.isOccupied()){ //If the room is not Offline, assign the lease
+        roomHasLease1.setLease(lease1);}
+        roomHasLease1.setCleaningStatus(2);
+        
+        Room temporaryRoom = roomsFren.get(2);
+        temporaryRoom.setCleaningStatus(3);
+        
+        temporaryRoom = roomsBlen.get(7);
+        temporaryRoom.setCleaningStatus(3);
+        
 
-        Room roomHasLease = rooms.get(j);
-        if (roomHasLease.getCleaningStatus()!=3 && !roomHasLease.isOccupied()){ //If the room is not Offline, assign the lease
-        roomHasLease.setLease(lease);}
-        
-        } 
-        
-        
-        rooms = glenside.getRooms();
-        
-        for (int j = 0; j < 3; j++){
-        
-        Student student = new Student(19035184,"Sean Lew");
-        Lease lease = new Lease(student,103,360);
-
-        Room roomHasLease = rooms.get(j);
-        if (roomHasLease.getCleaningStatus()!=3 && !roomHasLease.isOccupied()){ //If the room is not Offline, assign the lease
-        roomHasLease.setLease(lease);}
-        
-        } 
         
     }
     
@@ -160,7 +202,7 @@ public class UWEAS extends Application {
         
         primaryStage.setTitle("UWE Accommodation System Login");
         Scene scene;
-        scene = new Scene(root, 600, 300);
+        scene = new Scene(root, 585, 300);
         primaryStage.getIcons().add(new Image("uweas/uwe_icon.png"));
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -177,7 +219,6 @@ public class UWEAS extends Application {
         mainInstance.populateData();
         mainInstance.setKeyMain("Manager");
         launch(args);
-        
         
         
     }
